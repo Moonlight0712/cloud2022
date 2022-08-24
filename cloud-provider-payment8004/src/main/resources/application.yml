@@ -1,0 +1,22 @@
+#端口号
+server:
+  port: 8004
+
+
+spring:
+  application:
+    #服务别名——注册到zookeeper注册中心的名称
+    name: cloud-provider-payment
+    #数据库配置
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    #mysql5.x的没有cj
+    driver-class-name: com.mysql.jdbc.Driver
+    #记得先创建数据库
+    url: jdbc:mysql://localhost:3306/db2022?useUnicode=true&characterEncoding=utf-8&useSSL=false
+    username: root
+    password: abc123
+
+  cloud:
+    zookeeper:
+      connect-string: 192.168.165.129:2181 #linux的ip加暴露的端口号
